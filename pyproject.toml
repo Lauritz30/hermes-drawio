@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hermes-drawio"
+version = "1.0.0"
+description = "draw.io diagram integration plugin for Hermes Agent — create/edit native .drawio diagrams with role-based coloring, layout, and PNG/SVG/PDF export."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Lauritz30" }]
+keywords = ["hermes", "hermes-plugin", "drawio", "diagrams", "flowchart", "architecture"]
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Multimedia :: Graphics",
+]
+# No runtime dependencies: stdlib-only (xml.etree, zlib, base64, urllib, subprocess), so the plugin
+# never joins Hermes's dependency-resolution set.
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/Lauritz30/hermes-drawio"
+Issues = "https://github.com/Lauritz30/hermes-drawio/issues"
+
+[tool.setuptools]
+# The plugin directory is the distribution root; these are the files a wheel would carry.
+py-modules = ["__init__", "schemas"]
+
+[tool.setuptools.packages.find]
+include = ["drawio*"]

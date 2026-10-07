@@ -1,0 +1,31 @@
+name: hermes-drawio
+version: 1.0.0
+manifest_version: 2
+api_version: 1
+description: >-
+  draw.io diagram integration for Hermes Agent — create and edit native .drawio diagrams
+  (flowcharts, process flows, architecture, swimlanes) locally, with role-based auto-coloring,
+  layered/ELK layout, and PNG/SVG/PDF export via the draw.io desktop CLI. No MCP server.
+author: Lauritz30
+license: MIT
+homepage: https://github.com/Lauritz30/hermes-drawio
+tags: [drawio, diagrams, flowchart, architecture, swimlane, visualization]
+provides_tools:
+  - drawio_create_diagram
+  - drawio_add_cells
+  - drawio_update_cells
+  - drawio_delete_cells
+  - drawio_list_cells
+  - drawio_read_xml
+  - drawio_write_xml
+  - drawio_export
+  - drawio_open
+  - drawio_layout
+  - drawio_status
+config_schema:
+  drawio_path:
+    type: str
+    default: ""
+    description: >-
+      Absolute path to the draw.io desktop CLI binary. Empty uses env DRAWIO_PATH or
+      the default per-OS install location.
